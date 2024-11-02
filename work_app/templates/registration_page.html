@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>{{info.error}}</h3>
+    <form method = 'post'>
+        {% csrf_token %}
+        <label for='username'>Введите логин:</label>
+        <input type='text' id='username' name='username' maxlength='30' required>
+
+        <label for='password'>Введите пароль:</label>
+        <input type='password' id='password' name='password' minlength='8' required>
+
+        <label for='repeat_password'>Повторите пароль:</label>
+        <input type='password' id='repeat_password' name='repeat_password' minlength='8' required>
+
+        <label for='age'>Введите свой возраст:</label>
+        <input type='integer' id='age' name='age' maxvalue='101' required>
+
+        <button type='submit'>Отправить</button>
+    </form>
+</body>
+</html>

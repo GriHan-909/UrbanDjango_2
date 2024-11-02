@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+        <h1>Главная страница</h1>
+        {% endblock %}
+    </header>
+
+    <menu>
+        {% block menu %}
+        <a href='http://127.0.0.1:8000/#'><h2>Главная</h2></a>
+        <a href='http://127.0.0.1:8000/store'><h2>Магазин</h2></a>
+        <a href='http://127.0.0.1:8000/basket'><h2>Корзина</h2></a>
+        {% endblock %}
+    </menu>
+
+    <content>
+        {%block content%}
+
+        {% endblock %}
+    </content>
+</body>
+</html>
