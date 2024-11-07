@@ -16,7 +16,7 @@ def sign_up_by_django(request):
             info = {}
             context = {'info': info, 'form': form}
             if password==repeat_password and age > 18 and username not in users:
-                Buyer.objects.create(name=username, age=age)
+                Buyer.objects.create(name=username, balance=0.0, age=age)
                 return HttpResponse(f'Приветствуем, {username}!')
             elif password != repeat_password:
                 info['error'] = 'Пароли не совпадают'
@@ -45,7 +45,7 @@ def sign_up_by_html(request):
         age = request.POST.get('age')
 
         if password==repeat_password and int(age) > 18 and username not in users:
-            Buyer.objects.create(name=username, age=age)
+            Buyer.objects.create(name=username, balance=0.0, age=age)
             return HttpResponse(f'Приветствуем, {username}!')
         elif password != repeat_password:
             info['error'] = 'Пароли не совпадают'
@@ -66,7 +66,7 @@ def func_basket(request):
     title = 'Корзина'
     context = {
         'title': title,
-        'list_mark': ['BMW', 'CHANGAN', 'MERSEDES', 'AUDI', 'VOLVO', 'ZEEKR', 'LOTUS']
+        'list_mark': []
     }
 
     return render(request, 'basket.html', context)
